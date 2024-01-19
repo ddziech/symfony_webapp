@@ -1,6 +1,12 @@
 version: '3'
 
 services:
+  php:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./:/app
 ###> doctrine/doctrine-bundle ###
   database:
     image: postgres:${POSTGRES_VERSION:-16}-alpine
